@@ -28,8 +28,13 @@ public class ExecutorServiceDemoTest {
         System.out.println("JUNIT completed");
     }
     @Test
-    public void testThreadCallableInvoke() throws Exception {
-        executorServiceDemo.threadCallableInvoke();
+    public void testThreadCallableInvokeAll() throws Exception {
+        executorServiceDemo.threadCallableInvokeAll();
+        System.out.println("JUNIT completed");
+    }
+    @Test
+    public void testThreadCallableInvokeAny() throws Exception {
+        executorServiceDemo.threadCallableInvokeAny();
         System.out.println("JUNIT completed");
     }
     @Test

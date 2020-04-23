@@ -12,10 +12,13 @@ public class ExecutorServiceCreationDemo {
     ExecutorService fixedSizeExecutorService = Executors.newFixedThreadPool(10);
 
     ExecutorService pooledExecutorService = Executors.newScheduledThreadPool(10);
-    ExecutorService cachedExecutorService = Executors.newCachedThreadPool();
+
     //Threads that have not been used for sixty seconds are terminated and removed from the cache
-    ExecutorService workStealExecutorService = Executors.newWorkStealingPool(10); // Java 8,
+    ExecutorService cachedExecutorService = Executors.newCachedThreadPool();
+
     //every thread is backed with it's own deque. When one thread is done with it's tasks it takes task from other thread's deque and executes it.
     //Mostly used in ForkJoinPool
+    ExecutorService workStealExecutorService = Executors.newWorkStealingPool(10); // Java 8,
+
 
 }

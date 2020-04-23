@@ -8,7 +8,7 @@ public class CountDownLatchExample {
         CountDownLatch latch = new CountDownLatch(3);
         Thread t1 = new Thread(() -> {
             try {
-                //Thread.sleep(1000);
+                Thread.sleep(1000);
                 System.out.println(Thread.currentThread().getName()
                         + " finished");
                 latch.countDown();
@@ -19,7 +19,7 @@ public class CountDownLatchExample {
 
         Thread t2 = new Thread(() -> {
             try {
-                //Thread.sleep(2000);
+                Thread.sleep(2000);
                 latch.countDown();
                 System.out.println(Thread.currentThread().getName()
                         + " finished");
@@ -31,7 +31,7 @@ public class CountDownLatchExample {
         Thread t3 = new Thread(() -> {
             try {
                 Thread.sleep(1000);
-                latch.countDown();
+                //latch.countDown();
                 System.out.println(Thread.currentThread().getName()
                         + " finished");
             } catch (Exception e) {
