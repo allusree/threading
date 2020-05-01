@@ -173,7 +173,7 @@ public class CompletableFutureCombine {
                     return id * id; //multiply element
                 })
                         .exceptionally(e -> {
-                            System.out.println("Oops! We have an exception - " + ex.getMessage());
+                            System.out.println("Oops! We have an exception - " + e.getMessage());
                             return null;
                         });
 
