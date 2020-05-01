@@ -23,7 +23,7 @@ public class ReentrantReadWriteLockDemo {
 
         try {
             writeLock.lock();
-            System.out.print("Locks " + Thread.currentThread().getName() );
+            System.out.println("writting  Locks " + Thread.currentThread().getName() );
             syncHashMap.put(key, value);
             sleep(1000);
         } finally {
@@ -36,7 +36,7 @@ public class ReentrantReadWriteLockDemo {
     public String get(String key) {
         try {
             readLock.lock();
-            System.out.println(Thread.currentThread().getName() + " reading");
+            System.out.println("reading lock " + Thread.currentThread().getName()  );
             return syncHashMap.get(key);
         } finally {
             readLock.unlock();
@@ -108,7 +108,7 @@ public class ReentrantReadWriteLockDemo {
         };
         service.execute(writer);
         service.execute(writer2);
-        //service.execute(reader2);
+        service.execute(reader2);
 
         service.shutdown();
     }
