@@ -23,11 +23,11 @@ public class ReentrantReadWriteLockDemo {
 
         try {
             writeLock.lock();
-            System.out.println("writting  Locks " + Thread.currentThread().getName() );
+            System.out.println("#### writing  Locks " + Thread.currentThread().getName() );
             syncHashMap.put(key, value);
             sleep(1000);
         } finally {
-            System.out.println("Un Locks" + Thread.currentThread().getName() );
+            System.out.println("#### writing Un Locks" + Thread.currentThread().getName() );
             writeLock.unlock();
         }
 
@@ -36,10 +36,11 @@ public class ReentrantReadWriteLockDemo {
     public String get(String key) {
         try {
             readLock.lock();
-            System.out.println("reading lock " + Thread.currentThread().getName()  );
+            System.out.println("----- reading lock " + Thread.currentThread().getName()  );
             return syncHashMap.get(key);
         } finally {
             readLock.unlock();
+            System.out.println("----- reading un lock " + Thread.currentThread().getName()  );
         }
     }
 
